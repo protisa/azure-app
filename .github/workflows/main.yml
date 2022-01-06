@@ -19,8 +19,8 @@ jobs:
         username: ${{ secrets.ACR_USERNAME }}
         password: ${{ secrets.ACR_PASSWORD }}
     - run: |
-        docker build "$GITHUB_WORKSPACE/azure-vote" -f  "azure-vote/Dockerfile" -t ${{ env.AZURE_CONTAINER_REGISTRY }}.azurecr.io/myAKSCluster:${{ github.sha }} --label dockerfile-path=azure-vote/Dockerfile
-        docker push ${{ env.AZURE_CONTAINER_REGISTRY }}.azurecr.io/myAKSCluster:${{ github.sha }}
+        docker build "$GITHUB_WORKSPACE/azure-vote" -f  "azure-vote/Dockerfile" -t k8image.azurecr.io/myAKSCluster:${{ github.sha }} --label dockerfile-path=azure-vote/Dockerfile
+        docker push k8image.azurecr.io/myAKSCluster:${{ github.sha }}
 
     - uses: azure/aks-set-context@v1
       with:
