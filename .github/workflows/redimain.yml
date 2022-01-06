@@ -41,7 +41,7 @@ jobs:
         manifests: |
           azure-vote-all-in-one-redis.yaml
         images: |
-          ${{ env.AZURE_CONTAINER_REGISTRY }}.azurecr.io/myimage:${{ github.sha }}
+          ${{ env.AZURE_CONTAINER_REGISTRY }}.azurecr.io/myakscluster:${{ github.sha }}
         imagepullsecrets: |
           ${{ env.AZURE_CONTAINER_REGISTRY }}-registry-connection
         namespace: ${{ env.NAMESPACE }}
